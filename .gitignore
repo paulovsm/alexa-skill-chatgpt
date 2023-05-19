@@ -6,3 +6,5 @@ ask-resources.json
 .ask
 .vscode
 .env
+keys.js
+aws/

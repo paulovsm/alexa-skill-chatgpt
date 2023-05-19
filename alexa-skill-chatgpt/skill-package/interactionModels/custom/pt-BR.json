@@ -1,0 +1,77 @@
+{
+    "interactionModel": {
+        "languageModel": {
+            "invocationName": "amigo g. p. t.",
+            "intents": [
+                {
+                    "name": "AMAZON.CancelIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.HelpIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.StopIntent",
+                    "samples": []
+                },
+                {
+                    "name": "ChatGPTIntent",
+                    "slots": [
+                        {
+                            "name": "question",
+                            "type": "AMAZON.SearchQuery"
+                        }
+                    ],
+                    "samples": [
+                        "O que é {question}",
+                        "Pergunta {question}",
+                        "Faça {question}",
+                        "Execute {question}"
+                    ]
+                },
+                {
+                    "name": "AMAZON.NavigateHomeIntent",
+                    "samples": []
+                },
+                {
+                    "name": "AMAZON.FallbackIntent",
+                    "samples": []
+                }
+            ],
+            "types": []
+        },
+        "dialog": {
+            "intents": [
+                {
+                    "name": "ChatGPTIntent",
+                    "confirmationRequired": false,
+                    "prompts": {},
+                    "slots": [
+                        {
+                            "name": "question",
+                            "type": "AMAZON.SearchQuery",
+                            "elicitationRequired": true,
+                            "confirmationRequired": false,
+                            "prompts": {
+                                "elicitation": "Elicit.Slot.29691672240.1575270597350"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "delegationStrategy": "ALWAYS"
+        },
+        "prompts": [
+            {
+                "id": "Elicit.Slot.29691672240.1575270597350",
+                "variations": [
+                    {
+                        "type": "PlainText",
+                        "value": "Qual é a sua pergunta?"
+                    }
+                ]
+            }
+        ]
+    }
+}
